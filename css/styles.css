@@ -57,6 +57,38 @@
     margin: 16px 0;
 }
 
+/* INFORMATION */
+
+.info {
+    padding: 120px 16px;
+}
+
+.info h1.content-title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.info .cards {
+    display: flex;
+    gap: 64px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    max-width: 200px;
+}
+
+.card img {
+    border: #3882F6 4px solid;
+    border-radius: 16px;
+}
+
+.cards p.card-text {
+    margin-top: 16px;
+}
+
 /* COLORS */
 
 .header, .hero, .footer {
