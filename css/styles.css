@@ -40,11 +40,11 @@
     padding: 120px 16px;
 }
 
-.content-body {
+.hero .content-body {
     max-width: 600px;
 }
 
-.content-title, .hero button {
+.hero .content-title, .hero button {
     margin: 16px 0;
 }
 
@@ -89,6 +89,35 @@
 .quote p.text {
     margin: 16px 0;
 }
+
+/* CTA */
+
+.cta {
+    padding: 120px 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.cta .content-body {
+    display: flex;
+    padding: 32px 120px;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.cta .text {
+    flex: 1;
+}
+
+.cta h1.content-title {
+    margin: 4px 0;
+}
+
+.cta button.content-button {
+    align-self: center;
+    flex: 0 0 auto;
+}
+
 /* COLORS */
 
 .header, .hero, .footer {
@@ -126,7 +155,7 @@ button.content-button {
     font-weight: 600;
 }
 
-button.content-button, .cta {
+button.content-button, .cta .content-body {
     background-color: #3882F6;
     border-radius: 5px;
     color: #FFFFFF;
@@ -139,6 +168,14 @@ button.content-button, .cta {
 .card img {
     border: #3882F6 4px solid;
     border-radius: 16px;
+}
+
+.cta .content-body {
+    border-radius: 10px;
+}
+
+.cta h1.content-title {
+    font-size: 24px;
 }
 
 .cta button.content-button {
