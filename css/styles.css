@@ -81,6 +81,14 @@
     padding: 120px 16px;
 }
 
+.quote .content-body {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.quote p.text {
+    margin: 16px 0;
+}
 /* COLORS */
 
 .header, .hero, .footer {
