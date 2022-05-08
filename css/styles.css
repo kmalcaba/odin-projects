@@ -30,15 +30,6 @@
     gap: 16px;
 }
 
-.header ul {
-    list-style: none;
-}
-
-.header li a {
-    text-decoration: none;
-    color: inherit;
-}
-
 /* HERO */
 
 .hero {
@@ -80,13 +71,14 @@
     max-width: 200px;
 }
 
-.card img {
-    border: #3882F6 4px solid;
-    border-radius: 16px;
-}
-
 .cards p.card-text {
     margin-top: 16px;
+}
+
+/* QUOTE */
+
+.quote {
+    padding: 120px 16px;
 }
 
 /* COLORS */
@@ -98,6 +90,15 @@
 .header .title {
     font-size: 24px;
     color: #F9FAF8;
+}
+
+.header ul {
+    list-style: none;
+}
+
+.header li a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .hero h1.content-title {
@@ -127,6 +128,11 @@ button.content-button, .cta {
     border: #3882F6 solid 2px;
 }
 
+.card img {
+    border: #3882F6 4px solid;
+    border-radius: 16px;
+}
+
 .cta button.content-button {
     border: #FFFFFF solid 2px;
 }
@@ -146,4 +152,10 @@ button.content-button, .cta {
     font-weight: 300;
     font-style: italic;
     color: #1F2937;
+}
+
+.quote .name {
+    text-align: right;
+    font-weight: 600;
+    font-size: 18px;
 }
