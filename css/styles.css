@@ -118,6 +118,13 @@
     flex: 0 0 auto;
 }
 
+/* FOOTER */
+
+.footer {
+    padding: 24px 8px;
+    text-align: center;
+}
+
 /* COLORS */
 
 .header, .hero, .footer {
