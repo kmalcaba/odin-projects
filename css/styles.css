@@ -1,0 +1,56 @@
+* {
+    font-family: "Inter", sans-serif;
+}
+
+/* COLORS */
+
+.header, .hero, .footer {
+    background-color: #1F2937;
+}
+
+.header .title {
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+.hero h1.content-title {
+    font-size: 48px;
+    color: #F9FAF8;
+    font-weight: 900;
+}
+
+.hero p, .header ul.links, .footer {
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+button.content-button, .cta {
+    background-color: #3882F6;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.hero button.content-button {
+    border: #3882F6 solid 2px;
+}
+
+.cta button.content-button {
+    border: #FFFFFF solid 2px;
+}
+
+.info h1.content-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1F2937;
+}
+
+.quote {
+    background-color: #E5E7EB;
+}
+
+.quote .text {
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+    color: #1F2937;
+}
