@@ -32,7 +32,7 @@ function game() {
     }
 
     const winner = playerScore === 5 ? "YOU WIN" : "YOU LOSE";
-    console.log(winner);
+    alert(winner);
 
     function playRound(playerSelection, computerSelection) {
         if (computerSelection === ROCKPAPERSCISSORS[playerSelection]) {
