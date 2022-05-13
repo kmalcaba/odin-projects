@@ -1,7 +1,7 @@
 # Rock Paper Scissors
 Rock Paper Scissors project from The Odin Project
 
-Status: Currently in progress. The script runs the game purely in the console, but I plan on improving on this by adding an interface with React.
+Status: Currently in progress. The script runs the game purely in the console, but I plan on improving on this by adding an interface with React. Maybe I could convert this into the Fire Emblem weapon triangle...
 
 Techniques used: (as of 13/05/2022)
 
