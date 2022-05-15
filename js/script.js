@@ -14,27 +14,38 @@ const clickBtn = (e) => {
 };
 
 const startGame = (playerSelection) => {
-  let playerScore = 0;
-  let computerScore = 0;
+  const playerScoreSpan = document.querySelector(".player-score");
+  const computerScoreSpan = document.querySelector(".computer-score");
+
+  let playerScore = +playerScoreSpan.textContent;
+  let computerScore = +computerScoreSpan.textContent;
+
+  const runningScore = document.querySelector(".running-score");
+  const scoreList = document.createElement("li");
+  const resultList = document.createElement("li");
 
   const computerSelection = computerPlay();
-  console.log(
-    `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
-      (key) => ROCKPAPERSCISSORS[key] === computerSelection
-    )}`
-  );
-  console.log(`PLAYER: ${playerSelection}`);
+  scoreList.textContent += `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
+    (key) => ROCKPAPERSCISSORS[key] === computerSelection
+  )}`;
+  scoreList.textContent += ` | PLAYER: ${playerSelection}`;
   const winner = playRound(playerSelection, computerSelection);
   if (winner === "DRAW") {
-    console.log(winner);
+    resultList.textContent = winner;
   } else if (winner) {
     playerScore++;
-    console.log(`YOU WIN. ${playerSelection} WINS`);
+    resultList.textContent = `YOU WIN. ${playerSelection} WINS`;
   } else if (!winner) {
     computerScore++;
-    console.log(`YOU LOSE. ${computerSelection} WINS`);
+    resultList.textContent = `YOU LOSE. ${computerSelection} WINS`;
   }
   console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
+
+  playerScoreSpan.textContent = playerScore;
+  computerScoreSpan.textContent = computerScore;
+
+  runningScore.appendChild(scoreList);
+  runningScore.appendChild(resultList);
 };
 
 function playRound(playerSelection, computerSelection) {
@@ -74,9 +85,6 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   const btnContainer = document.querySelector(".container");
   btnContainer.addEventListener("click", clickBtn);
-
-  //   const winner = playerScore === 5 ? "YOU WIN" : "YOU LOSE";
-  //   alert(winner);
 }
 
 game();
