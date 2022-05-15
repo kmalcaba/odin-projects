@@ -12,79 +12,79 @@ function isInputCorrect(input) {
   else return false;
 }
 
-const clickRockBtn = () => "ROCK";
-const clickPaperBtn = () => "PAPER";
-const clickScissorsBtn = () => "SCISSORS";
+const clickBtn = (e) => {
+  let btnClass = e.target.classList.value;
+  btnClass = btnClass.toUpperCase();
 
-function game() {
+  startGame(btnClass);
+};
+
+const startGame = (playerSelection) => {
   let playerScore = 0;
   let computerScore = 0;
 
-  const rockBtn = document.querySelector(".rock");
-  rockBtn.addEventListener("click", clickRockBtn);
-  const paperBtn = document.querySelector(".paper");
-  const scissorsBtn = document.querySelector("scissors");
-
   while (computerScore < 5 && playerScore < 5) {
-    if (isInputCorrect(playerSelection)) {
-      const computerSelection = computerPlay();
-      console.log(
-        `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
-          (key) => ROCKPAPERSCISSORS[key] === computerSelection
-        )}`
-      );
-      console.log(`PLAYER: ${playerSelection}`);
-      console.log(playRound(playerSelection, computerSelection));
-      console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
-    } else {
-      alert(
-        'Input incorrect. Please enter "ROCK", "PAPER", or "SCISSORS" only. Try again.'
-      );
+    const computerSelection = computerPlay();
+    console.log(
+      `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
+        (key) => ROCKPAPERSCISSORS[key] === computerSelection
+      )}`
+    );
+    console.log(`PLAYER: ${playerSelection}`);
+    const winner = playRound(playerSelection, computerSelection);
+    if (winner === "DRAW") {
+      console.log(winner);
+    } else if (winner) {
+      playerScore++;
+      console.log(`YOU WIN. ${playerSelection} WINS`);
+    } else if (!winner) {
+      computerScore++;
+      console.log(`YOU LOSE. ${computerSelection} WINS`);
+    }
+    console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
+  }
+};
+
+function playRound(playerSelection, computerSelection) {
+  if (computerSelection === ROCKPAPERSCISSORS[playerSelection]) {
+    return "DRAW";
+  } else {
+    switch (computerSelection) {
+      case 0:
+        // if rock vs paper
+        if (ROCKPAPERSCISSORS[playerSelection] === 1) {
+          return true;
+        } else {
+          // if rock vs scissor
+          return false;
+        }
+
+      case 1:
+        // if paper vs rock
+        if (ROCKPAPERSCISSORS[playerSelection] === 0) {
+          return false;
+        } else {
+          // if paper vs scissors
+          return true;
+        }
+
+      case 2:
+        // if scissors vs rock
+        if (ROCKPAPERSCISSORS[playerSelection] === 0) {
+          return true;
+        } else {
+          return false;
+        }
     }
   }
+}
 
-  const winner = playerScore === 5 ? "YOU WIN" : "YOU LOSE";
-  alert(winner);
+function game() {
+  const btnContainer = document.querySelector(".container");
+  btnContainer.addEventListener("click", clickBtn);
 
-  function playRound(playerSelection, computerSelection) {
-    if (computerSelection === ROCKPAPERSCISSORS[playerSelection]) {
-      return "DRAW";
-    } else {
-      switch (computerSelection) {
-        case 0:
-          // if rock vs paper
-          if (ROCKPAPERSCISSORS[playerSelection] === 1) {
-            playerScore++;
-            return "YOU WIN! PAPER WINS";
-          } else {
-            // if rock vs scissor
-            computerScore++;
-            return "YOU LOSE! ROCK WINS";
-          }
-
-        case 1:
-          // if paper vs rock
-          if (ROCKPAPERSCISSORS[playerSelection] === 0) {
-            computerScore++;
-            return "YOU LOSE! PAPER WINS";
-          } else {
-            // if paper vs scissors
-            playerScore++;
-            return "YOU WIN! SCISSORS WIN";
-          }
-
-        case 2:
-          // if scissors vs rock
-          if (ROCKPAPERSCISSORS[playerSelection] === 0) {
-            playerScore++;
-            return "YOU WIN! ROCK WINS";
-          } else {
-            computerScore++;
-            return "YOU LOSE! SCISSORS WIN";
-          }
-      }
-    }
-  }
+  //   const winner = playerScore === 5 ? "YOU WIN" : "YOU LOSE";
+  //   alert(winner);
 }
 
 game();
