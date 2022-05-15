@@ -10,7 +10,18 @@ const clickBtn = (e) => {
   let btnClass = e.target.classList.value;
   btnClass = btnClass.toUpperCase();
 
-  startGame(btnClass);
+  const scores = startGame(btnClass);
+
+  if (scores.playerScore === 5) {
+    declareWinner(true);
+  } else if (scores.computerScore === 5) {
+    declareWinner(false);
+  }
+};
+
+const declareWinner = (winner) => {
+  if (winner) alert("YOU WIN");
+  else alert("YOU LOSE");
 };
 
 const startGame = (playerSelection) => {
@@ -46,6 +57,8 @@ const startGame = (playerSelection) => {
 
   runningScore.appendChild(scoreList);
   runningScore.appendChild(resultList);
+
+  return { playerScore: playerScore, computerScore: computerScore };
 };
 
 function playRound(playerSelection, computerSelection) {
@@ -84,7 +97,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   const btnContainer = document.querySelector(".container");
-  btnContainer.addEventListener("click", clickBtn);
+  const gameCompleted = btnContainer.addEventListener("click", clickBtn);
 }
 
 game();
