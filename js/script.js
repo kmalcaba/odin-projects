@@ -25,9 +25,10 @@ const startGame = (playerSelection) => {
   const resultList = document.createElement("li");
 
   const computerSelection = computerPlay();
-  scoreList.textContent += `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
+  const computerSelectionStr = Object.keys(ROCKPAPERSCISSORS).find(
     (key) => ROCKPAPERSCISSORS[key] === computerSelection
-  )}`;
+  );
+  scoreList.textContent += `COMPUTER: ${computerSelectionStr}`;
   scoreList.textContent += ` | PLAYER: ${playerSelection}`;
   const winner = playRound(playerSelection, computerSelection);
   if (winner === "DRAW") {
@@ -37,9 +38,8 @@ const startGame = (playerSelection) => {
     resultList.textContent = `YOU WIN. ${playerSelection} WINS`;
   } else if (!winner) {
     computerScore++;
-    resultList.textContent = `YOU LOSE. ${computerSelection} WINS`;
+    resultList.textContent = `YOU LOSE. ${computerSelectionStr} WINS`;
   }
-  console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
 
   playerScoreSpan.textContent = playerScore;
   computerScoreSpan.textContent = computerScore;
