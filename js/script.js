@@ -46,30 +46,43 @@ const updateScores = (scores) => {
   computerScoreSpan.textContent = scores.computerScore;
 };
 
-const startGame = (playerSelection, scores) => {
+const updateRunningScore = (choices, result) => {
   const runningScore = document.querySelector(".running-score");
   const scoreList = document.createElement("li");
   const resultList = document.createElement("li");
 
+  scoreList.textContent = `PLAYER: ${choices.playerChoice} | COMPUTER: ${choices.computerChoice}`;
+  if (result === "DRAW") resultList.textContent = result;
+  else if (result)
+    resultList.textContent = `YOU WIN. ${choices.playerChoice} WINS`;
+  else if (!result)
+    resultList.textContent = `YOU LOSE. ${choices.computerChoice} WINS`;
+
+  runningScore.appendChild(scoreList);
+  runningScore.appendChild(resultList);
+};
+
+const clearGame = () => {
+  updateScores({ playerScore: 0, computerScore: 0 });
+};
+
+const startGame = (playerSelection, scores) => {
   const computerSelection = computerPlay();
   const computerSelectionStr = Object.keys(ROCKPAPERSCISSORS).find(
     (key) => ROCKPAPERSCISSORS[key] === computerSelection
   );
-  scoreList.textContent += `COMPUTER: ${computerSelectionStr}`;
-  scoreList.textContent += ` | PLAYER: ${playerSelection}`;
+
   const winner = playRound(playerSelection, computerSelection);
-  if (winner === "DRAW") {
-    resultList.textContent = winner;
-  } else if (winner) {
+  if (winner) {
     scores.playerScore++;
-    resultList.textContent = `YOU WIN. ${playerSelection} WINS`;
   } else if (!winner) {
     scores.computerScore++;
-    resultList.textContent = `YOU LOSE. ${computerSelectionStr} WINS`;
   }
 
-  runningScore.appendChild(scoreList);
-  runningScore.appendChild(resultList);
+  updateRunningScore(
+    { playerChoice: playerSelection, computerChoice: computerSelectionStr },
+    winner
+  );
 
   updateScores(scores);
 
