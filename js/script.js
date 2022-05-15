@@ -94,7 +94,7 @@ const startGame = (playerSelection, scores) => {
   return scores;
 };
 
-function playRound(playerSelection, computerSelection) {
+const playRound = (playerSelection, computerSelection) => {
   if (computerSelection === ROCKPAPERSCISSORS[playerSelection]) {
     return "DRAW";
   } else {
@@ -126,11 +126,11 @@ function playRound(playerSelection, computerSelection) {
         }
     }
   }
-}
+};
 
-function game() {
+const game = () => {
   const btnContainer = document.querySelector(".container");
   btnContainer.addEventListener("click", clickBtn);
-}
+};
 
 game();
