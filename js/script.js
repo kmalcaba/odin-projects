@@ -4,9 +4,8 @@ const ROCKPAPERSCISSORS = {
     "SCISSORS": 2
 }
 
-function computerPlay () {
-    return Math.floor(Math.random() * 3);
-}
+const computerPlay = () => Math.floor(Math.random() * 3);
+
 
 function isInputCorrect(input) {
     if (input === "ROCK" | input === "PAPER" || input === "SCISSORS")
@@ -14,21 +13,29 @@ function isInputCorrect(input) {
     else return false;
 }
 
+const clickRockBtn = () => "ROCK";
+const clickPaperBtn = () => "PAPER";
+const clickScissorsBtn = () => "SCISSORS";
+
+
+
 function game() {
     let playerScore = 0;
     let computerScore = 0;
     
-    while(computerScore < 5 && playerScore < 5) {
-        const playerSelection = prompt("Enter ROCK, PAPER, SCISSORS").toUpperCase();
-        if (isInputCorrect(playerSelection)) {
-            const computerSelection = computerPlay();
-            console.log(`COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(key => ROCKPAPERSCISSORS[key] === computerSelection)}`);
-            console.log(`PLAYER: ${playerSelection}`);
-            console.log(playRound(playerSelection, computerSelection));
-            console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
-        } else {
-            alert('Input incorrect. Please enter "ROCK", "PAPER", or "SCISSORS" only. Try again.');
-        }
+    const rockBtn = document.querySelector('.rock');
+    rockBtn.addEventListener('click', clickRockBtn);
+    const paperBtn = document.querySelector('.paper');
+    const scissorsBtn = document.querySelector('scissors');
+
+    if (isInputCorrect(playerSelection)) {
+        const computerSelection = computerPlay();
+        console.log(`COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(key => ROCKPAPERSCISSORS[key] === computerSelection)}`);
+        console.log(`PLAYER: ${playerSelection}`);
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
+    } else {
+        alert('Input incorrect. Please enter "ROCK", "PAPER", or "SCISSORS" only. Try again.');
     }
 
     const winner = playerScore === 5 ? "YOU WIN" : "YOU LOSE";
