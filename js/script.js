@@ -6,12 +6,6 @@ const ROCKPAPERSCISSORS = {
 
 const computerPlay = () => Math.floor(Math.random() * 3);
 
-function isInputCorrect(input) {
-  if ((input === "ROCK") | (input === "PAPER") || input === "SCISSORS")
-    return true;
-  else return false;
-}
-
 const clickBtn = (e) => {
   let btnClass = e.target.classList.value;
   btnClass = btnClass.toUpperCase();
@@ -23,26 +17,24 @@ const startGame = (playerSelection) => {
   let playerScore = 0;
   let computerScore = 0;
 
-  while (computerScore < 5 && playerScore < 5) {
-    const computerSelection = computerPlay();
-    console.log(
-      `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
-        (key) => ROCKPAPERSCISSORS[key] === computerSelection
-      )}`
-    );
-    console.log(`PLAYER: ${playerSelection}`);
-    const winner = playRound(playerSelection, computerSelection);
-    if (winner === "DRAW") {
-      console.log(winner);
-    } else if (winner) {
-      playerScore++;
-      console.log(`YOU WIN. ${playerSelection} WINS`);
-    } else if (!winner) {
-      computerScore++;
-      console.log(`YOU LOSE. ${computerSelection} WINS`);
-    }
-    console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
+  const computerSelection = computerPlay();
+  console.log(
+    `COMPUTER: ${Object.keys(ROCKPAPERSCISSORS).find(
+      (key) => ROCKPAPERSCISSORS[key] === computerSelection
+    )}`
+  );
+  console.log(`PLAYER: ${playerSelection}`);
+  const winner = playRound(playerSelection, computerSelection);
+  if (winner === "DRAW") {
+    console.log(winner);
+  } else if (winner) {
+    playerScore++;
+    console.log(`YOU WIN. ${playerSelection} WINS`);
+  } else if (!winner) {
+    computerScore++;
+    console.log(`YOU LOSE. ${computerSelection} WINS`);
   }
+  console.log(`COMPUTER: ${computerScore} | PLAYER: ${playerScore}`);
 };
 
 function playRound(playerSelection, computerSelection) {
