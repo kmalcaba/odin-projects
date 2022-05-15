@@ -24,8 +24,6 @@ const clickBtn = (e) => {
 const declareWinner = (winner) => {
   if (winner) alert("YOU WIN");
   else alert("YOU LOSE");
-
-  clearGame();
 };
 
 const getScores = () => {
@@ -64,6 +62,11 @@ const updateRunningScore = (choices, result) => {
 
 const clearGame = () => {
   updateScores({ playerScore: 0, computerScore: 0 });
+  const runningScore = document.querySelector(".running-score");
+
+  while (runningScore.firstChild) {
+    runningScore.removeChild(runningScore.firstChild);
+  }
 };
 
 const startGame = (playerSelection, scores) => {
