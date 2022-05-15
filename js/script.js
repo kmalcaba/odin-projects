@@ -10,7 +10,9 @@ const clickBtn = (e) => {
   let btnClass = e.target.classList.value;
   btnClass = btnClass.toUpperCase();
 
-  const scores = startGame(btnClass);
+  let scores = getScores();
+
+  scores = startGame(btnClass, scores);
 
   if (scores.playerScore === 5) {
     declareWinner(true);
@@ -22,15 +24,29 @@ const clickBtn = (e) => {
 const declareWinner = (winner) => {
   if (winner) alert("YOU WIN");
   else alert("YOU LOSE");
+
+  clearGame();
 };
 
-const startGame = (playerSelection) => {
+const getScores = () => {
   const playerScoreSpan = document.querySelector(".player-score");
   const computerScoreSpan = document.querySelector(".computer-score");
 
-  let playerScore = +playerScoreSpan.textContent;
-  let computerScore = +computerScoreSpan.textContent;
+  return {
+    playerScore: +playerScoreSpan.textContent,
+    computerScore: +computerScoreSpan.textContent,
+  };
+};
 
+const updateScores = (scores) => {
+  const playerScoreSpan = document.querySelector(".player-score");
+  const computerScoreSpan = document.querySelector(".computer-score");
+
+  playerScoreSpan.textContent = scores.playerScore;
+  computerScoreSpan.textContent = scores.computerScore;
+};
+
+const startGame = (playerSelection, scores) => {
   const runningScore = document.querySelector(".running-score");
   const scoreList = document.createElement("li");
   const resultList = document.createElement("li");
@@ -45,20 +61,19 @@ const startGame = (playerSelection) => {
   if (winner === "DRAW") {
     resultList.textContent = winner;
   } else if (winner) {
-    playerScore++;
+    scores.playerScore++;
     resultList.textContent = `YOU WIN. ${playerSelection} WINS`;
   } else if (!winner) {
-    computerScore++;
+    scores.computerScore++;
     resultList.textContent = `YOU LOSE. ${computerSelectionStr} WINS`;
   }
-
-  playerScoreSpan.textContent = playerScore;
-  computerScoreSpan.textContent = computerScore;
 
   runningScore.appendChild(scoreList);
   runningScore.appendChild(resultList);
 
-  return { playerScore: playerScore, computerScore: computerScore };
+  updateScores(scores);
+
+  return scores;
 };
 
 function playRound(playerSelection, computerSelection) {
@@ -97,7 +112,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   const btnContainer = document.querySelector(".container");
-  const gameCompleted = btnContainer.addEventListener("click", clickBtn);
+  btnContainer.addEventListener("click", clickBtn);
 }
 
 game();
