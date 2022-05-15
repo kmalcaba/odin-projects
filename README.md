@@ -1,9 +1,20 @@
 # Rock Paper Scissors
 Rock Paper Scissors project from The Odin Project
 
-Status: Currently in progress. The script runs the game purely in the console, but I plan on improving on this by adding an interface with React. Maybe I could convert this into the Fire Emblem weapon triangle...
+Status: Currently in progress. There's barebones UI, but I want to refine it with React if I get the chance. Maybe I could convert this into the Fire Emblem weapon triangle...
 
-Techniques used: (as of 13/05/2022)
+## Changelog
+
+**2022-05-15**
+
+- Add barebones UI: buttons to for the player to click their choice
+- Add event listener on the container `<div>` of the three buttons, then easily determine which choice was picked from the button's class name
+- Refactor and modularize code into functions
+  - Create separate functions that only read/update the DOM, and separate functions for the game logic
+- Convert all functions to arrow function syntax
+- After declaring a winner, the scores automatically reset and the running score list is cleared
+
+**2022-05-13**
 
 - Access objects to quickly select rock, paper, scissors values into its corresponding integer values
 - Use `Math.random()` to generate the computer's selection
