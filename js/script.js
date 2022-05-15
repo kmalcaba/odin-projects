@@ -24,6 +24,8 @@ const clickBtn = (e) => {
 const declareWinner = (winner) => {
   if (winner) alert("YOU WIN");
   else alert("YOU LOSE");
+
+  clearGame();
 };
 
 const getScores = () => {
