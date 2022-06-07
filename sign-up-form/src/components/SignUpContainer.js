@@ -1,4 +1,5 @@
 import { StyledContainer, Paragraph } from "./styled/SignUpContainer.styled";
+import Form from "./Form";
 
 const SignUpContainer = () => {
   return (
@@ -11,6 +12,7 @@ const SignUpContainer = () => {
       <Paragraph>
         You <em>know</em> you want to.
       </Paragraph>
+      <Form />
     </StyledContainer>
   );
 };
