@@ -1,7 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import { Container } from "./components/styled/Container.styled";
-import Sidebar from "./components/Sidebar";
 import { GlobalStyles } from "./components/styled/Global";
+import Sidebar from "./components/Sidebar";
+import SignUpContainer from "./components/SignUpContainer";
 
 const theme = {
   colors: {
@@ -16,6 +17,7 @@ function App() {
         <GlobalStyles />
         <Container>
           <Sidebar />
+          <SignUpContainer />
         </Container>
       </>
     </ThemeProvider>
