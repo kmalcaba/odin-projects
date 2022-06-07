@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & > p,
+  & > form {
+    padding: 0 40px;
+  }
 `;
 
 export const Paragraph = styled.p`

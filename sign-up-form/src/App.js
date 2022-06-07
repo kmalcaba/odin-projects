@@ -7,6 +7,8 @@ import SignUpContainer from "./components/SignUpContainer";
 const theme = {
   colors: {
     title: "#fff",
+    body: "#eee",
+    form: "#fff",
   },
 };
 
