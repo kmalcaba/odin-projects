@@ -13,8 +13,9 @@ export const Title = styled.h2`
 export const FieldItem = styled.p`
   padding: 20px 20px 20px 0;
 
-  & > label {
-    margin-right: 16px;
+  & > label,
+  & > input {
+    display: block;
   }
 `;
 
@@ -30,4 +31,16 @@ export const Flex = styled.div`
   & > ul {
     flex: 1;
   }
+`;
+
+export const Label = styled.label`
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding: 10px 0;
+`;
+
+export const Input = styled.input`
+  margin-right: 60px;
+  border: 2px #eee solid;
+  padding: 3px;
 `;
