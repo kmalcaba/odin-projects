@@ -44,4 +44,9 @@ export const Input = styled.input`
   margin-right: 60px;
   border: 2px #eee solid;
   padding: 3px;
+
+  &:active,
+  :focus {
+    box-shadow: 2px 3px 5px ${({ theme }) => theme.colors.shadowSm};
+  }
 `;
