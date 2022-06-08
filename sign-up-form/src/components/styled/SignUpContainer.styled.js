@@ -18,7 +18,7 @@ export const Paragraph = styled.div`
   font-weight: 600;
   text-align: left;
   align-self: flex-start;
-  margin: 20px 0;
+  margin: 20px 20px 20px 0;
   max-width: 900px;
 
   & em {

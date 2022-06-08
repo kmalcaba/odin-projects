@@ -49,4 +49,8 @@ export const Input = styled.input`
   :focus {
     box-shadow: 2px 3px 5px ${({ theme }) => theme.colors.shadowSm};
   }
+
+  /* &:invalid {
+    border: 2px red solid;
+  } */
 `;
