@@ -32,6 +32,10 @@ export const Flex = styled.div`
   & > ul {
     flex: 1;
   }
+
+  @media (max-width: 1499px) {
+    justify-content: center;
+  }
 `;
 
 export const Label = styled.label`
@@ -48,6 +52,10 @@ export const Input = styled.input`
   &:active,
   :focus {
     box-shadow: 2px 3px 5px ${({ theme }) => theme.colors.shadowSm};
+  }
+
+  @media (max-width: 1499px) {
+    margin-right: 0;
   }
 
   /* &:invalid {
