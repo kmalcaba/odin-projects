@@ -9,6 +9,7 @@ const theme = {
     title: "#fff",
     body: "#eee",
     form: "#fff",
+    shadowSm: "rgba(0,0,0,0.15)",
   },
   screens: {
     tablet: "810px",
