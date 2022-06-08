@@ -1,4 +1,8 @@
-import { StyledContainer, Paragraph } from "./styled/SignUpContainer.styled";
+import {
+  StyledContainer,
+  Paragraph,
+  Button,
+} from "./styled/SignUpContainer.styled";
 import Form from "./Form";
 
 const SignUpContainer = () => {
@@ -13,6 +17,10 @@ const SignUpContainer = () => {
         You <em>know</em> you want to.
       </Paragraph>
       <Form />
+      <Button>Create Account</Button>
+      <p>
+        Already have an account? <a href='#'>Log in</a>
+      </p>
     </StyledContainer>
   );
 };
