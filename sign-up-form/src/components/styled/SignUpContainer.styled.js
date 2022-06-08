@@ -5,19 +5,21 @@ export const StyledContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
-  & > p,
+  & > div,
   & > form {
     padding: 0 40px;
   }
 `;
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.div`
   font-size: 1.5em;
   font-weight: 600;
   text-align: left;
   align-self: flex-start;
   margin: 20px 0;
+  max-width: 900px;
 
   & em {
     font-size: inherit;
