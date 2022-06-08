@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Sign Up Form
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Check out the live preview: https://kmalcaba.github.io/odin-projects/sign-up-form/build/
 
 ## Available Scripts
 
