@@ -11,7 +11,7 @@ export const Title = styled.h2`
 `;
 
 export const FieldItem = styled.p`
-  padding: 20px 20px 20px 0;
+  padding: 10px 20px 10px 0;
 
   & > label,
   & > input {
@@ -24,8 +24,9 @@ export const Flex = styled.div`
   align-items: center;
   flex-wrap: wrap;
   max-width: 800px;
+  margin-bottom: 20px;
 
-  flex: 0 1 auto;
+  flex: 0 1 800px;
 
   & > div,
   & > ul {
