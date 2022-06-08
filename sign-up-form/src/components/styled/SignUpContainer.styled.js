@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
   & > div,
   & > form,
   & > p {
-    padding: 0 40px;
+    padding: 0 60px;
   }
 
   & > p > a {
@@ -33,7 +33,7 @@ export const Paragraph = styled.div`
 `;
 
 export const Button = styled.button`
-  margin: 40px;
+  margin: 60px;
   padding: 16px 32px;
   display: block;
   background-color: ${({ theme }) => theme.colors.button};
