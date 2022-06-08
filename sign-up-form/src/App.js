@@ -10,6 +10,9 @@ const theme = {
     body: "#eee",
     form: "#fff",
   },
+  screens: {
+    tablet: "810px",
+  },
 };
 
 function App() {
