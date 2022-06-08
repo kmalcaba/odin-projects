@@ -1,6 +1,8 @@
 # Rock Paper Scissors
 Rock Paper Scissors project from The Odin Project
 
+[Live Preview](https://kmalcaba.github.io/odin-projects/odin-rockpaperscissors/)
+
 Status: Currently in progress. There's barebones UI, but I want to refine it with React if I get the chance. Maybe I could convert this into the Fire Emblem weapon triangle...
 
 ## Changelog
