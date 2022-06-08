@@ -1,7 +1,7 @@
 # odin-landing
 Landing Page project from The Odin Project
 
-[Live preview](https://kmalcaba.github.io/odin-landing/)
+[Live preview](https://kmalcaba.github.io/odin-projects/odin-landing/)
 
 Result:
 
