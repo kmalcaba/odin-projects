@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Check out the live preview: https://kmalcaba.github.io/odin-projects/sign-up-form/build/
 
+## Continued development
+
+I still need to add client side validation for this :)
+
 ## Available Scripts
 
 In the project directory, you can run:
